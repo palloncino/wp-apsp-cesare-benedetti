@@ -6,8 +6,8 @@
   background-size: cover;
 }
 
-.hero-container.default-bg {
-  background: url("http://apspstrigno.chebellagiornata.it/wp-content/uploads/2024/04/strigno-header-01.jpg");
+.hero-container {
+  background: rgb(143, 82, 82);
 }
 
 .hero-container .hero-image {
@@ -39,8 +39,6 @@
   margin: 0 !important;
   padding: 0.2rem 0.8rem !important;
   width: fit-content !important;
-  text-shadow: -2px -2px 0 #1e305080, 2px -2px 0 #1e305080, -2px 2px 0 #1e305080,
-    2px 2px 0 #1e305080;
 }
 
 .hero-container .main-title {

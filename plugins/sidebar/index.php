@@ -1,44 +1,90 @@
 <?php
 /*
-Plugin Name: Cesare Benedetti Header
-Description: Provides the Header through a shortcode. Use the shortcode [cesare_benedetti_header] to display the header.
-Version: 1.1
+Plugin Name: Sidebar Menu - APSP Cesare Benedetti 
+Description: Provides clickable sidebar menu items through a shortcode, shortcode: [sidebar_menu].
+Version: 1.0
 Author: Antonio Guiotto
 */
 
 // Function to enqueue scripts and styles
-function header_cesare_benedetti_scripts() {
+function sidebar_menu_scripts()
+{
     // Optionally, enqueue a CSS file if you have additional styles
-    wp_enqueue_style('cesare-benedetti-header-css', plugins_url('/custom-header-plugin.css', __FILE__));
-    // Enqueue JavaScript file if necessary
-    // wp_enqueue_script('cesare-benedetti-header-js', plugins_url('/example_1942384.js', __FILE__), array('jquery'), '1.0', true);
+    wp_enqueue_style('custom-sidebar-menu', plugins_url('/custom-sidebar-menu.css', __FILE__));
+    // Uncomment and modify if you need to enqueue JavaScript
+    // wp_enqueue_script('sidebar-menu-js', plugins_url('/sidebar-menu.js', __FILE__), array('jquery'), '1.0', true);
 }
-add_action('wp_enqueue_scripts', 'header_cesare_benedetti_scripts');
+add_action('wp_enqueue_scripts', 'sidebar_menu_scripts');
 
-// Shortcode function to output HTML
-function header_cesare_benedetti_shortcode($atts) {
-    // Extract shortcode attributes
-    $atts = shortcode_atts(array(
-        'bg_url' => ''
-    ), $atts, 'cesare_benedetti_header');
-
-    // Get current page title and site name
-    $page_title = get_the_title();
-    $site_name = get_bloginfo('name');
-
-    // Determine background style
-    $bg_style = $atts['bg_url'] ? 'style="background: url(' . esc_url($atts['bg_url']) . ') no-repeat center center; background-size: cover;"' : '';
-
+function sidebar_menu_shortcode()
+{
     // Output the specified HTML
-    return '<div class="hero-container" ' . $bg_style . '>
-                <div class="hero-text-container hero-text-container-show">
-                    <div class="text-wrapper">
-                        <h1 class="main-title">' . esc_html($site_name) . '</h1>
-                        <h3 class="sub-title">' . esc_html($page_title) . '</h3>
-                        <h6 class="sub-title-2">Cesare Benedetti (TN)</h6>
+    return '<div>
+                <div class="sidebar-menu-outer albo-online albo-pretorio" onclick="window.location.href=\'/albo-online\'">
+                    <div class="sidebar-menu-inner">
+                        <div class="sidebar-menu-icon">
+                            <div class="animate-svg"><img src="http://apsppieve.chebellagiornata.it/wp-content/uploads/2024/03/MANINA.svg" alt="Cursor Icon"></div>
+                        </div>
+                        <div class="sidebar-menu-text">
+                            <div class="sidebar-menu-text-container">
+                                <div class="sidebar-menu-text-first">Albo</div>
+                                <div class="sidebar-menu-text-second">Pretorio</div>
+                            </div>
+                            <div class="sidebar-menu-text-icon-container">
+                                <div class="sidebar-menu-text-icon-content"><img src="http://apsppieve.chebellagiornata.it/wp-content/uploads/2024/03/FOLDER.svg" alt="Folder Icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu-outer amministrazione-trasparente" onclick="window.location.href=\'/amministrazione-trasparente\'">
+                    <div class="sidebar-menu-inner">
+                        <div class="sidebar-menu-icon">
+                            <div class="animate-svg"><img src="http://apsppieve.chebellagiornata.it/wp-content/uploads/2024/03/MANINA.svg" alt="Cursor Icon"></div>
+                        </div>
+                        <div class="sidebar-menu-text">
+                            <div class="sidebar-menu-text-container">
+                                <div class="sidebar-menu-text-first">Amministrazione</div>
+                                <div class="sidebar-menu-text-second">Trasparente</div>
+                            </div>
+                            <div class="sidebar-menu-text-icon-container">
+                                <div class="sidebar-menu-text-icon-content"><img src="http://apsppieve.chebellagiornata.it/wp-content/uploads/2024/03/BANK.svg" alt="Bank Icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu-outer carta-servizi" onclick="window.open(\'https://www.apsp-roncegno.it/document/pdf/carta-dei-servizi-roncegno-2019/p29e166d7503aaf5194827ab81089f23/\', \'_blank\')">
+                    <div class="sidebar-menu-inner">
+                        <div class="sidebar-menu-icon">
+                            <div class="animate-svg"><img src="http://apsppieve.chebellagiornata.it/wp-content/uploads/2024/03/MANINA.svg" alt="Cursor Icon"></div>
+                        </div>
+                        <div class="sidebar-menu-text">
+                            <div class="sidebar-menu-text-container">
+                                <div class="sidebar-menu-text-first">Carta</div>
+                                <div class="sidebar-menu-text-second">dei Servizi</div>
+                            </div>
+                            <div class="sidebar-menu-text-icon-container">
+                                <div class="sidebar-menu-text-icon-content"><img src="http://apsppieve.chebellagiornata.it/wp-content/uploads/2024/03/BOOK.svg" alt="Book Icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu-outer anticorruzione-trasparenza" onclick="window.location.href=\'/anticorruzione-e-trasparenza\'">
+                    <div class="sidebar-menu-inner">
+                        <div class="sidebar-menu-icon">
+                            <div class="animate-svg"><img src="http://apsppieve.chebellagiornata.it/wp-content/uploads/2024/03/MANINA.svg" alt="Cursor Icon"></div>
+                        </div>
+                        <div class="sidebar-menu-text">
+                            <div class="sidebar-menu-text-container">
+                                <div class="sidebar-menu-text-first">Anticorruzione</div>
+                                <div class="sidebar-menu-text-second">e trasparenza</div>
+                            </div>
+                            <div class="sidebar-menu-text-icon-container">
+                                <div class="sidebar-menu-text-icon-content"><img src="http://apsppieve.chebellagiornata.it/wp-content/uploads/2024/03/BAN.svg" alt="Ban Icon"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>';
 }
 
-add_shortcode('cesare_benedetti_header', 'header_cesare_benedetti_shortcode');
+add_shortcode('cesare_benedetti_sidebar', 'sidebar_menu_shortcode');
