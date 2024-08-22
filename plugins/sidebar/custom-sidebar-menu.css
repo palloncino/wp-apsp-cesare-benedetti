@@ -1,0 +1,84 @@
+.side-button-outer {
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.side-button-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  border: 2px solid #e9e9e9;
+  height: 100%;
+}
+
+.side-button-inner:hover {
+  border: 2px solid #cbcbcb;
+}
+
+.side-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: all 0.2s ease;
+  transition-delay: 0.1s;
+  transform: rotate(90deg) scale(1.1) translateY(7%);
+}
+
+.side-button-text {
+  flex: 4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  transition: 0.2s;
+  border-radius: 0.2rem;
+}
+
+.side-button-text-icon-container {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  min-width: 72px;
+  justify-content: center;
+  align-items: center;
+  transition-delay: 0.1s;
+}
+
+.side-button-text-icon-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-button-text-text-container {
+  line-height: 1.4rem;
+  transition: 0.2s;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.2rem 0.4rem;
+}
+
+.side-button-outer:hover .side-button-text-text-container {
+  transition: 0.2s;
+  box-sizing: border-box;
+  border-radius: 0.4rem;
+}
+
+.selected-button .side-button-inner {
+  border: 2px solid #1e3050 !important;
+}
+
+.selected-button .side-button-text {
+  background: white;
+}
