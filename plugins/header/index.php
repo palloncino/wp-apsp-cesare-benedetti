@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cesare Benedetti Header
 Description: [cesare_benedetti_header bg_url="<URL>" nav_links="26,3" custom_class="ex-1" ]
-Version: 1.3
+Version: 1.4
 Author: Antonio Guiotto
 */
 
@@ -24,10 +24,16 @@ function header_cesare_benedetti_shortcode($atts) {
     // Get current user info
     $current_user = wp_get_current_user();
     $user_info = '';
+
+    // Set the URL for the Client Area login page (page ID 37)
+    $login_url = get_permalink(37);
+
     if ($current_user->ID) {
-        $user_info = '<div class="user-info">Ciao, ' . esc_html($current_user->display_name) . ' <span class="green-dot" style="color:green;">●</span> | <a href="' . wp_logout_url() . '">Logout</a></div>';
+        // User is logged in, show logout link
+        $user_info = '<div class="user-info">Ciao, ' . esc_html($current_user->display_name) . ' <span class="green-dot" style="color:green;">●</span> | <a href="' . wp_logout_url(home_url()) . '">Logout</a></div>';
     } else {
-        $user_info = '<div class="user-info"><a href="' . wp_login_url() . '">Client Area</a></div>';
+        // User is not logged in, show Client Area login link
+        $user_info = '<div class="user-info"><a href="' . esc_url($login_url) . '">Client Area</a></div>';
     }
 
     // Logo URL
@@ -52,8 +58,8 @@ function header_cesare_benedetti_shortcode($atts) {
     // Output the specified HTML
     return '<div class="header-container ' . esc_attr($atts['custom_class']) . '">
                 <div class="header-row header-row-top">
-                    <div class="logo"">
-                        <img src="' . esc_url($logo_url) . '" alt="Logo">
+                    <div class="logo">
+                        <img src="' . esc_url($logo_url) . '" alt="Logo" style="max-height: 80px;">
                     </div>
                     <div class="user-session">' . $user_info . '</div>
                 </div>
