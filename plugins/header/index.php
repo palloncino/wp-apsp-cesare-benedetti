@@ -1,17 +1,14 @@
 <?php
 /*
 Plugin Name: Cesare Benedetti Header
-Description: Provides the Header through a shortcode. Use the shortcode [cesare_benedetti_header] to display the header.
-Version: 1.1
+Description: [cesare_benedetti_header bg_url="<URL>" nav_links="26,3" custom_class="ex-1" ]
+Version: 1.3
 Author: Antonio Guiotto
 */
 
 // Function to enqueue scripts and styles
 function header_cesare_benedetti_scripts() {
-    // Optionally, enqueue a CSS file if you have additional styles
     wp_enqueue_style('cesare-benedetti-header-css', plugins_url('/custom-header-plugin.css', __FILE__));
-    // Enqueue JavaScript file if necessary
-    // wp_enqueue_script('cesare-benedetti-header-js', plugins_url('/example_1942384.js', __FILE__), array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'header_cesare_benedetti_scripts');
 
@@ -19,22 +16,55 @@ add_action('wp_enqueue_scripts', 'header_cesare_benedetti_scripts');
 function header_cesare_benedetti_shortcode($atts) {
     // Extract shortcode attributes
     $atts = shortcode_atts(array(
-        'bg_url' => ''
+        'bg_url' => '',                // Background URL for the hero section
+        'nav_links' => '',             // Comma-separated list of page IDs for navigation
+        'custom_class' => '',          // Additional custom class for styling
     ), $atts, 'cesare_benedetti_header');
 
-    // Get current page title and site name
-    $page_title = get_the_title();
-    $page_id = get_the_ID();
-    $site_name = get_bloginfo('name');
+    // Get current user info
+    $current_user = wp_get_current_user();
+    $user_info = '';
+    if ($current_user->ID) {
+        $user_info = '<div class="user-info">Ciao, ' . esc_html($current_user->display_name) . ' <span class="green-dot" style="color:green;">●</span> | <a href="' . wp_logout_url() . '">Logout</a></div>';
+    } else {
+        $user_info = '<div class="user-info"><a href="' . wp_login_url() . '">Client Area</a></div>';
+    }
+
+    // Logo URL
+    $logo_url = 'http://apspcesarebenedetti.chebellagiornata.it/wp-content/uploads/2024/08/Logo.png';
 
     // Determine background style
     $bg_style = $atts['bg_url'] ? 'style="background: url(' . esc_url($atts['bg_url']) . ') no-repeat center center; background-size: cover;"' : '';
 
+    // Handle navigation links
+    $nav_links_html = '<nav class="user-nav"><ul>';
+    if (!empty($atts['nav_links'])) {
+        $nav_links = explode(',', $atts['nav_links']);
+        foreach ($nav_links as $page_id) {
+            $page_id = trim($page_id);
+            if (is_numeric($page_id) && get_post_status($page_id) == 'publish') {
+                $nav_links_html .= '<li><a href="' . get_permalink($page_id) . '">' . get_the_title($page_id) . '</a></li>';
+            }
+        }
+    }
+    $nav_links_html .= '</ul></nav>';
+
     // Output the specified HTML
-    return '<div class="hero-container" ' . $bg_style . '>
-                <div class="hero-text-container hero-text-container-show">
-                    <div class="text-wrapper">
-                        <h3 class="sub-title" title="Page ID: ' . esc_attr($page_id) . '">' . esc_html($page_title) . '</h3>
+    return '<div class="header-container ' . esc_attr($atts['custom_class']) . '">
+                <div class="header-row header-row-top">
+                    <div class="logo"">
+                        <img src="' . esc_url($logo_url) . '" alt="Logo">
+                    </div>
+                    <div class="user-session">' . $user_info . '</div>
+                </div>
+                <div class="header-row header-row-navbar">
+                    ' . $nav_links_html . '
+                </div>
+                <div class="hero-container" ' . $bg_style . '>
+                    <div class="hero-text-container hero-text-container-show">
+                        <div class="text-wrapper">
+                            <h3 class="sub-title" title="Page ID: ' . esc_attr(get_the_ID()) . '">' . esc_html(get_the_title()) . '</h3>
+                        </div>
                     </div>
                 </div>
             </div>';
