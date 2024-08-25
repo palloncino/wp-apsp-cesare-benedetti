@@ -14,7 +14,7 @@
 
 .header-row {
   width: 100%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .header-row-top {
@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
 }
 
 .header-row-navbar {
@@ -37,14 +37,20 @@
 }
 
 .user-session {
-  text-align: right;
-  font-size: 14px;
+  font-size: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  gap: 0.6rem;
 }
 
 .user-info a {
   color: #0073aa;
   text-decoration: none;
-  margin-left: 10px;
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
@@ -127,21 +133,21 @@
 /* Responsive adjustments */
 @media only screen and (max-width: 1024px) {
   .hero-container {
-      height: 270px;
+    height: 270px;
   }
 
   .hero-container .main-title {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .hero-container .sub-title {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .hero-container .hero-text-container .main-title {
-      line-height: 2rem;
+    line-height: 2rem;
   }
 }
 
