@@ -1,24 +1,30 @@
 <?php
 /*
 Plugin Name: Cesare Benedetti Header
-Description: [cesare_benedetti_header bg_url="<URL>" nav_links="26,3" custom_class="ex-1" ]
-Version: 1.5
+Description: [cesare_benedetti_header bg_url="<URL>" nav_links="26,3" custom_class="ex-1" show_breadcrumb="true|false"]
+Version: 1.6
 Author: Antonio Guiotto
 */
 
+// Include the breadcrumbs function
+require_once plugin_dir_path(__FILE__) . 'breadcrumbs.php';
+
 // Function to enqueue scripts and styles
-function header_cesare_benedetti_scripts() {
+function header_cesare_benedetti_scripts()
+{
     wp_enqueue_style('cesare-benedetti-header-css', plugins_url('/custom-header-plugin.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'header_cesare_benedetti_scripts');
 
 // Shortcode function to output HTML
-function header_cesare_benedetti_shortcode($atts) {
+function header_cesare_benedetti_shortcode($atts)
+{
     // Extract shortcode attributes
     $atts = shortcode_atts(array(
         'bg_url' => '',                // Background URL for the hero section
         'nav_links' => '',             // Comma-separated list of page IDs for navigation
         'custom_class' => '',          // Additional custom class for styling
+        'show_breadcrumb' => 'true'    // Show breadcrumb by default
     ), $atts, 'cesare_benedetti_header');
 
     // Get current user info
@@ -34,7 +40,7 @@ function header_cesare_benedetti_shortcode($atts) {
 
     if ($current_user->ID) {
         // User is logged in, show account link, username, and logout link
-        $user_info = '<div class="user-info">Ciao, ' . esc_html($current_user->display_name) . ' <span class="green-dot" style="color:green;">●</span> | <a href="' . esc_url($account_url) . '">Account</a> | <a href="' . wp_logout_url($home_url) . '">Logout</a></div>';
+        $user_info = '<div class="user-info">' . esc_html($current_user->display_name) . ' <span class="green-dot" style="color:#90e839;">●</span> | <a href="' . esc_url($account_url) . '">Account</a> | <a href="' . wp_logout_url($home_url) . '">Logout</a></div>';
     } else {
         // User is not logged in, show Client Area login link
         $user_info = '<div class="user-info"><a href="' . esc_url($login_url) . '">Client Area</a></div>';
@@ -59,23 +65,34 @@ function header_cesare_benedetti_shortcode($atts) {
     }
     $nav_links_html .= '</ul></nav>';
 
+    // Determine whether to show the breadcrumb
+    $breadcrumb_html = '';
+    if ($atts['show_breadcrumb'] === 'true') {
+        ob_start();
+        cesare_benedetti_breadcrumbs();
+        $breadcrumb_html = ob_get_clean();
+    }
+
     // Output the specified HTML
     return '<div class="header-container ' . esc_attr($atts['custom_class']) . '">
-                <div class="header-row header-row-top">
-                    <div class="logo">
-                        <a href="' . esc_url($home_url) . '">
-                            <img src="' . esc_url($logo_url) . '" alt="Logo" style="max-height: 80px;">
-                        </a>
+                <div class="header-content">
+                    <div class="header-row header-row-top">
+                        <div class="logo">
+                            <a href="' . esc_url($home_url) . '">
+                                <img src="' . esc_url($logo_url) . '" alt="Logo" style="max-height: 80px;">
+                            </a>
+                        </div>
+                        <div class="user-session">' . $user_info . '</div>
                     </div>
-                    <div class="user-session">' . $user_info . '</div>
-                </div>
-                <div class="header-row header-row-navbar">
-                    ' . $nav_links_html . '
-                </div>
-                <div class="hero-container" ' . $bg_style . '>
-                    <div class="hero-text-container hero-text-container-show">
-                        <div class="text-wrapper">
-                            <h3 class="sub-title" title="Page ID: ' . esc_attr(get_the_ID()) . '">' . esc_html(get_the_title()) . '</h3>
+                    <div class="header-row header-row-navbar">
+                        ' . $nav_links_html . '
+                    </div>
+                    <div class="hero-container" ' . $bg_style . '>
+                        <div class="hero-text-container hero-text-container-show">
+                            <div class="text-wrapper">
+                                <h3 class="sub-title" title="Page ID: ' . esc_attr(get_the_ID()) . '">' . esc_html(get_the_title()) . '</h3>
+                                ' . $breadcrumb_html . ' <!-- Breadcrumbs inserted here -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,4 +100,3 @@ function header_cesare_benedetti_shortcode($atts) {
 }
 
 add_shortcode('cesare_benedetti_header', 'header_cesare_benedetti_shortcode');
-

@@ -1,8 +1,15 @@
-/* Basic styling for the header */
+/* - - - - - - - - - - - - - - - - - - -
+  HEADER
+ - - - - - - - - - - - - - - - - - - - */
 .header-container {
   width: 100%;
   box-sizing: border-box;
-  background-color: #f4f4f4; /* Consider a neutral background for the header */
+  background: #00000010;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header-row {
@@ -15,15 +22,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff; /* Background color for the top row */
-  border-bottom: 1px solid #ddd; /* Light border for separation */
+  border-bottom: 1px solid #ddd;
 }
 
 .header-row-navbar {
   padding: 10px 20px;
   display: flex;
   justify-content: flex-start; /* Align navbar items to the left */
-  background-color: #f9f9f9; /* Slightly different shade for the navbar */
 }
 
 .logo img {
@@ -78,8 +83,8 @@
 
 .hero-container {
   position: relative;
-  height: 300px;
-  background-color: #eaeaea; /* Fallback background color */
+  height: 270px;
+  background: #00000010;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -101,11 +106,9 @@
 .hero-container .main-title,
 .hero-container .sub-title,
 .hero-container .sub-title-2 {
-  color: white;
   margin: 0;
   padding: 0.2rem 0.8rem;
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero-container .main-title {
@@ -124,7 +127,7 @@
 /* Responsive adjustments */
 @media only screen and (max-width: 1024px) {
   .hero-container {
-      height: 300px;
+      height: 270px;
   }
 
   .hero-container .main-title {
@@ -140,4 +143,29 @@
   .hero-container .hero-text-container .main-title {
       line-height: 2rem;
   }
+}
+
+/* - - - - - - - - - - - - - - - - - - -  
+  BREADCRUMB
+ - - - - - - - - - - - - - - - - - - - */
+
+.breadcrumb {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #555;
+}
+
+.breadcrumb a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb li + li::before {
+  content: " » "; /* Using the » character as the separator */
+  margin: 0 5px;
+  color: #999;
 }
