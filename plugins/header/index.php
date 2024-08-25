@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cesare Benedetti Header
 Description: [cesare_benedetti_header bg_url="<URL>" nav_links="26,3" custom_class="ex-1" show_breadcrumb="true|false"]
-Version: 1.6
+Version: 1.7
 Author: Antonio Guiotto
 */
 
@@ -19,6 +19,9 @@ add_action('wp_enqueue_scripts', 'header_cesare_benedetti_scripts');
 // Shortcode function to output HTML
 function header_cesare_benedetti_shortcode($atts)
 {
+    // Default page IDs if nav_links attribute is not provided
+    $default_nav_links = array(83, 26, 88, 90, 92);
+
     // Extract shortcode attributes
     $atts = shortcode_atts(array(
         'bg_url' => '',                // Background URL for the hero section
@@ -54,13 +57,11 @@ function header_cesare_benedetti_shortcode($atts)
 
     // Handle navigation links, aligned to the left
     $nav_links_html = '<nav class="user-nav" style="text-align: left;"><ul>';
-    if (!empty($atts['nav_links'])) {
-        $nav_links = explode(',', $atts['nav_links']);
-        foreach ($nav_links as $page_id) {
-            $page_id = trim($page_id);
-            if (is_numeric($page_id) && get_post_status($page_id) == 'publish') {
-                $nav_links_html .= '<li><a href="' . get_permalink($page_id) . '">' . get_the_title($page_id) . '</a></li>';
-            }
+    $nav_links = !empty($atts['nav_links']) ? explode(',', $atts['nav_links']) : $default_nav_links;
+    foreach ($nav_links as $page_id) {
+        $page_id = trim($page_id);
+        if (is_numeric($page_id) && get_post_status($page_id) == 'publish') {
+            $nav_links_html .= '<li><a href="' . get_permalink($page_id) . '">' . get_the_title($page_id) . '</a></li>';
         }
     }
     $nav_links_html .= '</ul></nav>';

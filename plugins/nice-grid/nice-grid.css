@@ -1,0 +1,36 @@
+.nice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-item {
+    height: 270px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    opacity: 0.9;
+}
+
+.grid-text {
+    height: 50px;
+    color: #fff !important;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Default color if not overridden */
+}
