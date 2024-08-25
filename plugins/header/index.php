@@ -2,7 +2,7 @@
 /*
 Plugin Name: Cesare Benedetti Header
 Description: [cesare_benedetti_header bg_url="<URL>" nav_links="26,3" custom_class="ex-1" ]
-Version: 1.4
+Version: 1.5
 Author: Antonio Guiotto
 */
 
@@ -27,23 +27,27 @@ function header_cesare_benedetti_shortcode($atts) {
 
     // Set the URL for the Client Area login page (page ID 37)
     $login_url = get_permalink(37);
+    // Set the URL for the Account page (page ID 63)
+    $account_url = get_permalink(63);
+    // Set the URL for the homepage (page ID 2)
+    $home_url = get_permalink(2);
 
     if ($current_user->ID) {
-        // User is logged in, show logout link
-        $user_info = '<div class="user-info">Ciao, ' . esc_html($current_user->display_name) . ' <span class="green-dot" style="color:green;">●</span> | <a href="' . wp_logout_url(home_url()) . '">Logout</a></div>';
+        // User is logged in, show account link, username, and logout link
+        $user_info = '<div class="user-info">Ciao, ' . esc_html($current_user->display_name) . ' <span class="green-dot" style="color:green;">●</span> | <a href="' . esc_url($account_url) . '">Account</a> | <a href="' . wp_logout_url($home_url) . '">Logout</a></div>';
     } else {
         // User is not logged in, show Client Area login link
         $user_info = '<div class="user-info"><a href="' . esc_url($login_url) . '">Client Area</a></div>';
     }
 
-    // Logo URL
+    // Logo URL (linked to homepage)
     $logo_url = 'http://apspcesarebenedetti.chebellagiornata.it/wp-content/uploads/2024/08/Logo.png';
 
     // Determine background style
     $bg_style = $atts['bg_url'] ? 'style="background: url(' . esc_url($atts['bg_url']) . ') no-repeat center center; background-size: cover;"' : '';
 
-    // Handle navigation links
-    $nav_links_html = '<nav class="user-nav"><ul>';
+    // Handle navigation links, aligned to the left
+    $nav_links_html = '<nav class="user-nav" style="text-align: left;"><ul>';
     if (!empty($atts['nav_links'])) {
         $nav_links = explode(',', $atts['nav_links']);
         foreach ($nav_links as $page_id) {
@@ -59,7 +63,9 @@ function header_cesare_benedetti_shortcode($atts) {
     return '<div class="header-container ' . esc_attr($atts['custom_class']) . '">
                 <div class="header-row header-row-top">
                     <div class="logo">
-                        <img src="' . esc_url($logo_url) . '" alt="Logo" style="max-height: 80px;">
+                        <a href="' . esc_url($home_url) . '">
+                            <img src="' . esc_url($logo_url) . '" alt="Logo" style="max-height: 80px;">
+                        </a>
                     </div>
                     <div class="user-session">' . $user_info . '</div>
                 </div>
@@ -77,3 +83,4 @@ function header_cesare_benedetti_shortcode($atts) {
 }
 
 add_shortcode('cesare_benedetti_header', 'header_cesare_benedetti_shortcode');
+
