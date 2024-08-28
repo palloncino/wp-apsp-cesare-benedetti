@@ -4,7 +4,7 @@ Plugin Name: Nice Grid Plugin
 Description: Generates a customizable grid of items with background images, text, colors, and links. 
 Usage: [nice_grid images="URL1,URL2,..." texts="Text1,Text2,..." colors="Color1,Color2,..." links="Link1,Link2,..."]
 Version: 1.2
-Author: Your Name
+Author: Antonio Guiotto
 */
 
 function nice_grid_enqueue_styles() {

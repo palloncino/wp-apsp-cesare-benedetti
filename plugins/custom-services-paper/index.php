@@ -3,7 +3,7 @@
 Plugin Name: Custom Services Paper
 Description: Displays a section for "I Servizi Offerti dall'A.P.S.P." with an image and a link. Use the shortcode [custom_services_paper] to display it.
 Version: 1.0
-Author: Your Name
+Author: Antonio Guiotto
 */
 
 // Function to enqueue the CSS for the custom services paper

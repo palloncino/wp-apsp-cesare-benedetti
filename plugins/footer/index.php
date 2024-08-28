@@ -3,7 +3,7 @@
 Plugin Name: Custom Footer Plugin
 Description: Automatically adds a custom footer to every page for the APSP Cesare Benedetti website.
 Version: 1.1
-Author: Your Name
+Author: Antonio Guiotto
 */
 
 // Function to enqueue the CSS for the footer

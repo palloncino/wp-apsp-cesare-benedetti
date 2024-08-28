@@ -3,7 +3,7 @@
 Plugin Name: Featured Links Plugin
 Description: Generates a featured links menu for the APSP Cesare Benedetti website. Use the shortcode [featured_links] to display the menu.
 Version: 1.0
-Author: Your Name
+Author: Antonio Guiotto
 */
 
 // Function to enqueue the CSS for the featured links

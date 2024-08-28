@@ -3,7 +3,7 @@
 Plugin Name: Presentation Menu Plugin
 Description: Generates a presentation menu for the APSP Cesare Benedetti website with shortcode [presentation_menu].
 Version: 1.1
-Author: Your Name
+Author: Antonio Guiotto
 */
 
 // Function to enqueue the CSS for the presentation menu
