@@ -1,0 +1,22 @@
+.custom-services-paper__widget {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.custom-services-paper__widget h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.custom-services-paper__content-h {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-services-paper__content-h img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}

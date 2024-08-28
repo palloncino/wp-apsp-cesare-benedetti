@@ -1,3 +1,33 @@
+.homepage-links-grid__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.homepage-links-grid__item {
+    width: 31%; /* Adjust the width as needed */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.homepage-links-grid__item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.homepage-links-grid__iconbox {
+    text-align: left;
+}
+
+.homepage-links-grid__icon {
+    font-size: 40px;
+    color: #0073aa;
+    margin-bottom: 15px;
+}
+
 .homepage-links-grid__title {
     font-size: 18px;
     color: #333;
@@ -14,7 +44,21 @@
     margin-bottom: 15px;
 }
 
-.g-btn {
+.homepage-links-grid__link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.homepage-links-grid__link:hover .homepage-links-grid__title {
+    color: #005a8c;
+}
+
+.homepage-links-grid__iconbox:hover .homepage-links-grid__icon {
+    color: #005a8c;
+}
+
+.homepage-links-grid__button {
     background-color: #0073aa;
     color: #fff;
     border: 1px solid #0073aa;
@@ -24,35 +68,19 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    font-size: 14px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.g-btn.outlined {
+.homepage-links-grid__button.outlined {
     background-color: transparent;
     color: #0073aa;
 }
 
-.g-btn.size_small {
-    font-size: 14px;
-    padding: 6px 12px;
-}
-
-.g-btn:hover {
+.homepage-links-grid__button:hover {
     background-color: #005a8c;
     color: #fff;
     border-color: #005a8c;
-}
-
-.homepage-links-grid__link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.homepage-links-grid__link:hover .homepage-links-grid__title {
-    color: #005a8c;
-}
-
-.homepage-links-grid__iconbox:hover .homepage-links-grid__icon {
-    color: #005a8c;
 }
 
 @media only screen and (max-width: 768px) {

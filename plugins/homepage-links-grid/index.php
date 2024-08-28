@@ -8,7 +8,7 @@ Author: Your Name
 
 // Function to enqueue the CSS for the homepage links grid
 function homepage_links_grid_enqueue_styles() {
-    wp_enqueue_style('homepage-links-grid-css', plugins_url('homepage-links-grid.css', __FILE__));
+    wp_enqueue_style('homepage-links-grid-css', plugin_dir_url(__FILE__) . 'homepage-links-grid.css');
 }
 add_action('wp_enqueue_scripts', 'homepage_links_grid_enqueue_styles');
 
@@ -30,7 +30,7 @@ function homepage_links_grid_render() {
                         <p>In questa sezione potrai consultare le regole in materia di trasparenza e di prevenzione della corruzione per le A.P.S.P.;</p>
                         <div class="g-hr type_invisible size_small"></div>
                         <a href="https://www.apsp-cesarebenedetti.it/anticorruzione-e-trasparenza/32-15-1/" target="_self">
-                            <button class="g-btn type_default outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
+                            <button class="homepage-links-grid__button outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
                         </a>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ function homepage_links_grid_render() {
                         <p>In questa sezione potrai visionare circolari, scaricare documenti ed avere maggiori informazioni sull'Amministrazione dell'APSP;</p>
                         <div class="g-hr type_invisible size_small"></div>
                         <a href="https://www.apsp-cesarebenedetti.it/amministrazione-trasparente/45-16/" target="_self">
-                            <button class="g-btn type_default outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
+                            <button class="homepage-links-grid__button outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
                         </a>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ function homepage_links_grid_render() {
                         <p>I volontari portano "aria fresca" all'interno della nostra Casa e ci permettono di sviluppare nuovi progetti che arricchiscono le giornate dei residenti;</p>
                         <div class="g-hr type_invisible size_small"></div>
                         <a href="https://www.apsp-cesarebenedetti.it/volontari/32-20/" target="_self">
-                            <button class="g-btn type_default outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
+                            <button class="homepage-links-grid__button outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
                         </a>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ function homepage_links_grid_render() {
                         <p>All'interno del sistema telematico sono pubblicati gli atti che devono essere portati a conoscenza dei cittadini, affinché possano prenderne visione;</p>
                         <div class="g-hr type_invisible size_small"></div>
                         <a href="http://www.apsp-cesarebenedetti.it/pubblicità-legale/58-22-1/" class="homepage-links-grid__link">
-                            <button class="g-btn type_default outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
+                            <button class="homepage-links-grid__button outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
                         </a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ function homepage_links_grid_render() {
                         <p>In questa sezione potrai consultare un elenco delle tariffe suddivise per i servizi offerti dell'APSP Cesare Benedetti;</p>
                         <div class="g-hr type_invisible size_small"></div>
                         <a href="https://www.apsp-cesarebenedetti.it/tariffe-e-servizi/32-18/" target="_self">
-                            <button class="g-btn type_default outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
+                            <button class="homepage-links-grid__button outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
                         </a>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ function homepage_links_grid_render() {
                         <p>La nostra Casa abbraccia una Politica per la Qualità tesa a perseguire uno standard elevato dei servizi forniti e al miglioramento continui degli stessi;</p>
                         <div class="g-hr type_invisible size_small"></div>
                         <a href="https://www.apsp-cesarebenedetti.it/qualita-/32-8/" target="_self">
-                            <button class="g-btn type_default outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
+                            <button class="homepage-links-grid__button outlined size_small"><span class="sp">LEGGI TUTTO &gt;</span></button>
                         </a>
                     </div>
                 </div>
