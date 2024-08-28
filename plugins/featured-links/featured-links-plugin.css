@@ -14,7 +14,7 @@
 }
 
 .featured-links__list {
-    list-style: none;
+    list-style: none; /* Remove bullets from list items */
     padding: 0;
     margin: 0;
 }
@@ -27,6 +27,8 @@
     text-decoration: none;
     color: #0073aa;
     font-size: 16px;
+    display: block; /* Ensure the anchor takes up the full width */
+    padding: 5px 0; /* Add some padding to the links */
 }
 
 .featured-links__anchor:hover {

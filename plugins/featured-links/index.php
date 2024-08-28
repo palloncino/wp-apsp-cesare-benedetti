@@ -21,17 +21,17 @@ function featured_links_plugin_render() {
         <nav class="featured-links__nav">
             <ul class="featured-links__list">
                 <li class="featured-links__item">
-                    <a href="https://www.apsp-cesarebenedetti.it/anticorruzione-e-trasparenza/32-15-1/" class="featured-links__anchor">
+                    <a href="https://apspcesarebenedetti.chebellagiornata.it/anticorruzione-e-trasparenza/" class="featured-links__anchor">
                         <span class="featured-links__title">Anticorruzione e trasparenza</span>
                     </a>
                 </li>
                 <li class="featured-links__item">
-                    <a href="https://www.apsp-cesarebenedetti.it/amministrazione-trasparente/45-16/" class="featured-links__anchor">
+                    <a href="https://apspcesarebenedetti.chebellagiornata.it/amministrazione-trasparente/" class="featured-links__anchor">
                         <span class="featured-links__title">Amministrazione trasparente</span>
                     </a>
                 </li>
                 <li class="featured-links__item">
-                    <a href="https://www.apsp-cesarebenedetti.it/albo-telematico/58-22-1/" class="featured-links__anchor">
+                    <a href="https://apspcesarebenedetti.chebellagiornata.it/albo-telematico/" class="featured-links__anchor">
                         <span class="featured-links__title">Albo telematico</span>
                     </a>
                 </li>
