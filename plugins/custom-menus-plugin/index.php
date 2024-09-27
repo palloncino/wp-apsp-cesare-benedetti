@@ -23,14 +23,14 @@ function services_rsa_render() {
         <h4 class="custom-menu-title">R.S.A.</h4>
         <nav class="custom-menu-nav">
             <ul class="custom-menu-list">
-                <li class="custom-menu-item"><a href="/casa-di-soggiorno/" class="custom-menu-link">Casa di soggiorno</a></li>
-                <li class="custom-menu-item"><a href="/centro-diurno/" class="custom-menu-link">Centro diurno</a></li>
-                <li class="custom-menu-item"><a href="/hospice/" class="custom-menu-link">Hospice</a></li>
-                <li class="custom-menu-item"><a href="/fisioterapia-per-esterni/" class="custom-menu-link">Fisioterapia per esterni</a></li>
-                <li class="custom-menu-item"><a href="/infermieri-e-medici-specialistici/" class="custom-menu-link">Infermieri e medici specialistici</a></li>
-                <li class="custom-menu-item"><a href="/assistenza-domiciliare-specializzata/" class="custom-menu-link">Assistenza domiciliare specializzata</a></li>
-                <li class="custom-menu-item"><a href="/modulistica/" class="custom-menu-link">Modulistica</a></li>
-                <li class="custom-menu-item"><a href="/tariffe-e-servizi/" class="custom-menu-link">Tariffe e servizi</a></li>
+                <li class="custom-menu-item"><a href="/casa-di-soggiorno/" class="custom-menu-link">Casa di soggiorno <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/centro-diurno/" class="custom-menu-link">Centro diurno <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/hospice/" class="custom-menu-link">Hospice <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/fisioterapia-per-esterni/" class="custom-menu-link">Fisioterapia per esterni <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/infermieri-e-medici-specialistici/" class="custom-menu-link">Infermieri e medici specialistici <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/assistenza-domiciliare-specializzata/" class="custom-menu-link">Assistenza domiciliare specializzata <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/modulistica/" class="custom-menu-link">Modulistica <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/tariffe-e-servizi/" class="custom-menu-link">Tariffe e servizi <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
             </ul>
         </nav>
     </div>
@@ -49,14 +49,14 @@ function presentation_menu_plugin_render() {
         <h4 class="custom-menu-title">Presentazione</h4>
         <nav class="custom-menu-nav">
             <ul class="custom-menu-list">
-                <li class="custom-menu-item"><a href="/chi-siamo/storia/" class="custom-menu-link">Storia</a></li>
-                <li class="custom-menu-item"><a href="/chi-siamo/statuto/" class="custom-menu-link">Statuto</a></li>
-                <li class="custom-menu-item"><a href="/chi-siamo/mission/" class="custom-menu-link">Mission</a></li>
-                <li class="custom-menu-item"><a href="/chi-siamo/politica-per-la-qualita/" class="custom-menu-link">Politica per la qualità</a></li>
-                <li class="custom-menu-item"><a href="/chi-siamo/politica-per-la-privacy/" class="custom-menu-link">Politica per la privacy</a></li>
-                <li class="custom-menu-item"><a href="/chi-siamo/i-nostri-contatti/" class="custom-menu-link">I nostri contatti</a></li>
-                <li class="custom-menu-item"><a href="/chi-siamo/figure-di-riferimento/" class="custom-menu-link">Figure di riferimento</a></li>
-                <li class="custom-menu-item"><a href="/chi-siamo/link-utili/" class="custom-menu-link">Link utili</a></li>
+                <li class="custom-menu-item"><a href="/chi-siamo/storia/" class="custom-menu-link">Storia <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/chi-siamo/statuto/" class="custom-menu-link">Statuto <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/chi-siamo/mission/" class="custom-menu-link">Mission <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/chi-siamo/politica-per-la-qualita/" class="custom-menu-link">Politica per la qualità <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/chi-siamo/politica-per-la-privacy/" class="custom-menu-link">Politica per la privacy <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/chi-siamo/i-nostri-contatti/" class="custom-menu-link">I nostri contatti <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/chi-siamo/figure-di-riferimento/" class="custom-menu-link">Figure di riferimento <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/chi-siamo/link-utili/" class="custom-menu-link">Link utili <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
             </ul>
         </nav>
     </div>
@@ -75,9 +75,9 @@ function featured_links_plugin_render() {
         <h4 class="custom-menu-title">In evidenza</h4>
         <nav class="custom-menu-nav">
             <ul class="custom-menu-list">
-                <li class="custom-menu-item"><a href="/anticorruzione-e-trasparenza/" class="custom-menu-link">Anticorruzione e trasparenza</a></li>
-                <li class="custom-menu-item"><a href="/amministrazione-trasparente/" class="custom-menu-link">Amministrazione trasparente</a></li>
-                <li class="custom-menu-item"><a href="/albo-telematico/" class="custom-menu-link">Albo telematico</a></li>
+                <li class="custom-menu-item"><a href="/anticorruzione-e-trasparenza/" class="custom-menu-link">Anticorruzione e trasparenza <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/amministrazione-trasparente/" class="custom-menu-link">Amministrazione trasparente <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/albo-telematico/" class="custom-menu-link">Albo telematico <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
             </ul>
         </nav>
     </div>
@@ -96,9 +96,9 @@ function dove_siamo_menu_render() {
         <h4 class="custom-menu-title">Dove Siamo</h4>
         <nav class="custom-menu-nav">
             <ul class="custom-menu-list">
-                <li class="custom-menu-item"><a href="/dove-siamo/nei-dintorni/" class="custom-menu-link">Nei dintorni</a></li>
-                <li class="custom-menu-item"><a href="/dove-siamo/comune-di-mori/" class="custom-menu-link">Comune di Mori</a></li>
-                <li class="custom-menu-item"><a href="/dove-siamo/come-raggiungerci/" class="custom-menu-link">Come raggiungerci</a></li>
+                <li class="custom-menu-item"><a href="/dove-siamo/nei-dintorni/" class="custom-menu-link">Nei dintorni <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/dove-siamo/comune-di-mori/" class="custom-menu-link">Comune di Mori <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
+                <li class="custom-menu-item"><a href="/dove-siamo/come-raggiungerci/" class="custom-menu-link">Come raggiungerci <img src="<?php echo plugins_url('advance.gif', __FILE__); ?>" class="custom-menu-icon" alt="icon"></a></li>
             </ul>
         </nav>
     </div>

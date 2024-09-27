@@ -52,11 +52,15 @@ function header_cesare_benedetti_shortcode($atts)
     // Logo URL (linked to homepage)
     $logo_url = 'http://apspcesarebenedetti.chebellagiornata.it/wp-content/uploads/2024/08/Logo.png';
 
+    // Default background image URL
+    $default_bg_url = 'http://apspcesarebenedetti.chebellagiornata.it/wp-content/uploads/2024/09/fantastic-blue-sky-scaled.jpg';
+
     // Determine background style
-    $bg_style = $atts['bg_url'] ? 'style="background: url(' . esc_url($atts['bg_url']) . ') no-repeat center center; background-size: cover;"' : '';
+    $bg_url = $atts['bg_url'] ? esc_url($atts['bg_url']) : esc_url($default_bg_url);
+    $bg_style = 'style="background: url(' . $bg_url . ') no-repeat center center; background-size: cover;"';
 
     // Handle navigation links, aligned to the left
-    $nav_links_html = '<nav class="user-nav" style="text-align: left;"><ul>';
+    $nav_links_html = '<nav class="user-nav"><ul>';
     $nav_links = !empty($atts['nav_links']) ? explode(',', $atts['nav_links']) : $default_nav_links;
     foreach ($nav_links as $page_id) {
         $page_id = trim($page_id);
@@ -75,12 +79,12 @@ function header_cesare_benedetti_shortcode($atts)
     }
 
     // Output the specified HTML
-    return '<div class="header-container ' . esc_attr($atts['custom_class']) . '">
+    return '<header class="header-container ' . esc_attr($atts['custom_class']) . '">
                 <div class="header-content">
                     <div class="header-row header-row-top">
                         <div class="logo">
                             <a href="' . esc_url($home_url) . '">
-                                <img src="' . esc_url($logo_url) . '" alt="Logo" style="max-height: 80px;">
+                                <img src="' . esc_url($logo_url) . '" alt="Logo">
                             </a>
                         </div>
                         <div class="user-session">' . $user_info . '</div>
@@ -89,15 +93,15 @@ function header_cesare_benedetti_shortcode($atts)
                         ' . $nav_links_html . '
                     </div>
                     <div class="hero-container" ' . $bg_style . '>
-                        <div class="hero-text-container hero-text-container-show">
+                        <div class="hero-text-container">
                             <div class="text-wrapper">
-                                <h3 class="sub-title" title="Page ID: ' . esc_attr(get_the_ID()) . '">' . esc_html(get_the_title()) . '</h3>
+                                <h3 class="sub-title">' . esc_html(get_the_title()) . '</h3>
                                 ' . $breadcrumb_html . ' <!-- Breadcrumbs inserted here -->
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>';
+            </header>';
 }
 
 add_shortcode('cesare_benedetti_header', 'header_cesare_benedetti_shortcode');
