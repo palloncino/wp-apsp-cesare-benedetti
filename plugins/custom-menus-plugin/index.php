@@ -23,7 +23,6 @@ function services_rsa_render() {
         <h4 class="custom-menu-title">R.S.A.</h4>
         <nav class="custom-menu-nav">
             <ul class="custom-menu-list">
-                <li class="custom-menu-item"><a href="/i-nostri-servizi/" class="custom-menu-link">R.S.A.</a></li>
                 <li class="custom-menu-item"><a href="/casa-di-soggiorno/" class="custom-menu-link">Casa di soggiorno</a></li>
                 <li class="custom-menu-item"><a href="/centro-diurno/" class="custom-menu-link">Centro diurno</a></li>
                 <li class="custom-menu-item"><a href="/hospice/" class="custom-menu-link">Hospice</a></li>
@@ -86,3 +85,24 @@ function featured_links_plugin_render() {
     return ob_get_clean();
 }
 add_shortcode('featured_links', 'featured_links_plugin_render');
+
+/* --------------------------
+   Dove Siamo Menu (Hardcoded)
+   -------------------------- */
+function dove_siamo_menu_render() {
+    ob_start();
+    ?>
+    <div class="custom-menu-widget">
+        <h4 class="custom-menu-title">Dove Siamo</h4>
+        <nav class="custom-menu-nav">
+            <ul class="custom-menu-list">
+                <li class="custom-menu-item"><a href="/dove-siamo/nei-dintorni/" class="custom-menu-link">Nei dintorni</a></li>
+                <li class="custom-menu-item"><a href="/dove-siamo/comune-di-mori/" class="custom-menu-link">Comune di Mori</a></li>
+                <li class="custom-menu-item"><a href="/dove-siamo/come-raggiungerci/" class="custom-menu-link">Come raggiungerci</a></li>
+            </ul>
+        </nav>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('dove_siamo_menu', 'dove_siamo_menu_render');

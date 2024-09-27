@@ -35,15 +35,29 @@ add_action('um_registration_complete', 'create_user_folder_on_registration', 10,
 
 // Function to display user files
 function display_user_files() {
-    // Get current user ID
+    // Get current user information
     $current_user = wp_get_current_user();
     $user_id = $current_user->ID;
+    $display_name = $current_user->display_name;
+
+    // Greet the user in Italian
+    echo '<div class="account-page">';
+    echo '<header class="account-header">';
+    echo '<h1>Benvenuto, ' . esc_html($display_name) . '!</h1>';
+    echo '<p>In questa sezione, puoi accedere e scaricare i documenti che ti sono stati condivisi.</p>';
+    echo '</header>';
+
+    echo '<section class="account-intro">';
+    echo '<h2>I tuoi documenti privati</h2>';
+    echo '<p>Qui sotto troverai i file disponibili per il download. Se non vedi nulla, significa che l\'amministratore non ha ancora caricato documenti per te.</p>';
+    echo '</section>';
 
     // Retrieve user-specific folder path from user meta
     $user_folder_path = get_user_meta($user_id, 'user_folder_path', true);
     $upload_dir = wp_upload_dir(); // Get the upload directory
     $user_folder_url = str_replace($upload_dir['basedir'], $upload_dir['baseurl'], $user_folder_path);
 
+    echo '<section class="user-files-list">';
     // Check if the folder exists
     if ($user_folder_path && file_exists($user_folder_path)) {
         // Get all files in the folder
@@ -53,18 +67,20 @@ function display_user_files() {
         $files = array_diff($files, array('.', '..'));
 
         if (!empty($files)) {
-            echo '<ul>';
+            echo '<ul class="file-list">';
             foreach ($files as $file) {
                 $file_url = esc_url($user_folder_url . '/' . $file);
-                echo '<li><a href="' . $file_url . '" download>' . esc_html($file) . '</a></li>';
+                echo '<li class="file-item"><a href="' . $file_url . '" download>' . esc_html($file) . '</a></li>';
             }
             echo '</ul>';
         } else {
-            echo '<p>No files shared with you yet.</p>';
+            echo '<p class="no-files">Non ci sono file condivisi con te al momento.</p>';
         }
     } else {
-        echo '<p>Your folder is not available.</p>';
+        echo '<p class="no-files">La tua cartella non è disponibile.</p>';
     }
+    echo '</section>';
+    echo '</div>';
 }
 
 // Shortcode to display user files on a specific page
@@ -85,4 +101,3 @@ function redirect_to_account_page_after_login($user_login, $user) {
     exit;
 }
 add_action('wp_login', 'redirect_to_account_page_after_login', 10, 2);
-
