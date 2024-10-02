@@ -76,7 +76,7 @@
 
 .hero-header {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
   background-size: cover;
   height: 300px;
@@ -92,6 +92,7 @@
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
+
 
 #header-height {
   height: 140px;
@@ -177,6 +178,15 @@
 .navbar .nav-item {
   list-style: none;
   margin-right: 20px;
+}
+
+.cb-nav-item {
+	margin-right: .5rem;
+	padding: .2rem .5rem;
+}
+
+.navbar-nav.mr-auto {
+	padding-left: 0;
 }
 
 .navbar .nav-link {
