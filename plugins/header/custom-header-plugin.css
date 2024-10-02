@@ -1,175 +1,147 @@
-/* General Header Container */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .header-container {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 20px 0;
-  background-color: #ffffff;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Content */
 .header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  padding: 20px 0;
 }
 
-/* Top Header Row */
-.header-row-top {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+.logo-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #007bff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Logo Styling */
 .logo img {
-  max-height: 70px;
-  transition: opacity 0.3s ease; /* Smooth transition */
+  height: 50px;
+  width: auto;
+  max-width: 100%;
 }
 
-.logo img:hover {
-  opacity: 0.8; /* Slight fade on hover */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-/* User Session Info */
-.user-session {
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.user-session a {
-  color: #0073aa;
-  margin-left: 10px;
-  text-decoration: none;
+.user-info .username {
   font-weight: 600;
 }
 
-.user-session a:hover {
-  text-decoration: underline;
-}
-
-/* Navigation Styling */
-.user-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  padding: 0;
-  margin: 15px 0;
-}
-
-.user-nav ul li {
-  position: relative;
-}
-
-.user-nav ul li a {
+.user-info a {
+  color: #007bff;
   text-decoration: none;
-  color: #333;
   font-weight: 500;
-  padding: 10px 15px;
   position: relative;
-  transition: color 0.3s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.user-nav ul li a::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0073aa;
-  transition: width 0.3s ease;
+.user-info a:hover {
+  background-color: rgba(0, 123, 255, 0.1);
 }
 
-.user-nav ul li a:hover::before {
-  width: 100%;
+.green-dot {
+  font-size: 1rem;
+  color: #90e839;
 }
 
-.user-nav ul li a:hover {
-  color: #0073aa;
+.navbar {
+  margin-bottom: 20px;
 }
 
-/* Hero Section */
 .hero-container {
-  width: 100%;
+  position: relative;
   height: 300px;
-  background-color: #f4f4f4;
-  background-size: cover;
-  background-position: center;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.hero-container .hero-text-container {
   text-align: center;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero-container h3 {
-  font-size: 2.2rem;
-  color: #333;
+  font-size: 2.5rem;
   margin: 0;
-  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.hero-container p {
-  font-size: 1rem;
-  color: #666;
-  margin-top: 10px;
-}
-
-/* Breadcrumb Styling */
 .breadcrumb {
-  font-size: 0.85rem;
-  margin-top: 15px;
-  color: #999;
+  background: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  color: white;
+  font-size: 1.1rem;
 }
 
 .breadcrumb a {
-  color: #0073aa;
-  text-decoration: none;
+  color: white;
 }
 
 .breadcrumb a:hover {
   text-decoration: underline;
 }
 
-.breadcrumb li + li::before {
-  content: "›";
-  margin: 0 5px;
-  color: #ccc;
+#mobileMenu .navbar-nav .nav-link {
+  padding: 10px 0;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
+#mobileMenu .user-info a {
+  padding: 5px 0;
+}
+
+.header-content > .d-flex {
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 992px) {
+  .logo img {
+      display: none;
+  }
+  .logo-text {
+      font-size: 1.5rem;
+  }
+
   .header-content {
-    padding: 0 20px;
+      padding: 10px 5px;
+  }
+
+  .user-info {
+      gap: 10px;
   }
 
   .hero-container h3 {
-    font-size: 1.8rem;
+      font-size: 1.5rem;
   }
 
-  .user-nav ul {
-    gap: 15px;
+  .navbar-toggler {
+      background-color: #007bff;
+  }
+
+  .navbar {
+      display: none;
+  }
+
+  .breadcrumb {
+      font-size: 0.9rem;
+      margin: 5px 0;
+  }
+
+  #mobileMenu .bg-light {
+      padding: 15px;
+  }
+
+  #mobileMenu .navbar-nav .nav-link {
+      padding: 8px 0;
   }
 }
-
-@media (max-width: 600px) {
-  .hero-container {
-    height: 200px;
-  }
-
-  .hero-container h3 {
-    font-size: 1.5rem;
-  }
-}
-
