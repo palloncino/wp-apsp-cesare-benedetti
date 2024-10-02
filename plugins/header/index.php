@@ -80,7 +80,7 @@ function header_cesare_benedetti_shortcode($atts) {
     <style>
         /* Cesare Benedetti Header Styles */
         .cb-header-container {
-            background-color: #f8f9fa;
+            background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
@@ -170,7 +170,6 @@ function header_cesare_benedetti_shortcode($atts) {
         .cb-hero-header h1 {
             font-size: 2.5rem;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         #cb-header-height {
