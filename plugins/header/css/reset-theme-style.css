@@ -1,0 +1,71 @@
+/* Reset Theme Styles Scoped to Header Container */
+
+.header-container *,
+.header-container a,
+.header-container button,
+.header-container ul,
+.header-container ol,
+.header-container li,
+.header-container h1,
+.header-container h2,
+.header-container h3,
+.header-container h4,
+.header-container h5,
+.header-container h6,
+.header-container p,
+.header-container div,
+.header-container span,
+.header-container img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+.header-container ul,
+.header-container ol {
+    list-style: none;
+}
+
+.header-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header-container button:focus,
+.header-container a:focus,
+.header-container input:focus,
+.header-container textarea:focus {
+    outline: none;
+}
+
+.header-container input,
+.header-container textarea {
+    outline: none;
+    border: none;
+}
+
+.header-container select {
+    outline: none;
+    border: none;
+}
+
+.header-container a:hover,
+.header-container button:hover,
+.header-container .nav-link:hover {
+    outline: none;
+    background: none;
+}
+
+.header-container .breadcrumb {
+    margin-bottom: 1rem;
+}
