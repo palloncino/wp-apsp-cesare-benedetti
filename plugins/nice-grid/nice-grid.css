@@ -4,6 +4,12 @@
     gap: 10px;
 }
 
+@media (max-width: 780px) {
+    .nice-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .grid-item {
     height: 270px;
     background-size: cover;
