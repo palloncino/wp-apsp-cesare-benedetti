@@ -40,16 +40,16 @@ function display_user_files() {
     $user_id = $current_user->ID;
     $display_name = $current_user->display_name;
 
-    // Greet the user in Italian
+    // Greet the user in Italian with improved styling
     echo '<div class="account-page">';
-    echo '<header class="account-header">';
-    echo '<h1>Benvenuto, ' . esc_html($display_name) . '!</h1>';
-    echo '<p>In questa sezione, puoi accedere e scaricare i documenti che ti sono stati condivisi.</p>';
+    echo '<header class="account-header" style="margin-bottom: 20px; padding: 10px; border-bottom: 2px solid #e0e0e0;">';
+    echo '<h1 style="font-size: 24px; margin-bottom: 10px; color: #333;">Benvenuto, ' . esc_html($display_name) . '!</h1>';
+    echo '<p style="font-size: 16px; color: #555;">In questa sezione, puoi accedere e scaricare i documenti che ti sono stati condivisi.</p>';
     echo '</header>';
 
-    echo '<section class="account-intro">';
-    echo '<h2>I tuoi documenti privati</h2>';
-    echo '<p>Qui sotto troverai i file disponibili per il download. Se non vedi nulla, significa che l\'amministratore non ha ancora caricato documenti per te.</p>';
+    echo '<section class="account-intro" style="margin: 20px 0;">';
+    echo '<h2 style="font-size: 20px; margin-bottom: 10px; color: #333;">I tuoi documenti privati</h2>';
+    echo '<p style="font-size: 14px; color: #666;">Qui sotto troverai i file disponibili per il download. Se non vedi nulla, significa che l\'amministratore non ha ancora caricato documenti per te.</p>';
     echo '</section>';
 
     // Retrieve user-specific folder path from user meta
@@ -57,7 +57,7 @@ function display_user_files() {
     $upload_dir = wp_upload_dir(); // Get the upload directory
     $user_folder_url = str_replace($upload_dir['basedir'], $upload_dir['baseurl'], $user_folder_path);
 
-    echo '<section class="user-files-list">';
+    echo '<section class="user-files-list" style="padding: 20px; border: 1px solid #ddd; background: #f9f9f9;">';
     // Check if the folder exists
     if ($user_folder_path && file_exists($user_folder_path)) {
         // Get all files in the folder
@@ -67,17 +67,19 @@ function display_user_files() {
         $files = array_diff($files, array('.', '..'));
 
         if (!empty($files)) {
-            echo '<ul class="file-list">';
+            echo '<ul class="file-list" style="list-style-type: none; padding: 0; margin: 0;">';
             foreach ($files as $file) {
                 $file_url = esc_url($user_folder_url . '/' . $file);
-                echo '<li class="file-item"><a href="' . $file_url . '" download>' . esc_html($file) . '</a></li>';
+                echo '<li class="file-item" style="margin: 10px 0; padding: 10px; background: #fff; border: 1px solid #e0e0e0; border-radius: 5px;">';
+                echo '<a href="' . $file_url . '" download style="font-size: 16px; color: #0073aa; text-decoration: none;">' . esc_html($file) . '</a>';
+                echo '</li>';
             }
             echo '</ul>';
         } else {
-            echo '<p class="no-files">Non ci sono file condivisi con te al momento.</p>';
+            echo '<p class="no-files" style="font-size: 14px; color: #888;">Non ci sono file condivisi con te al momento.</p>';
         }
     } else {
-        echo '<p class="no-files">La tua cartella non è disponibile.</p>';
+        echo '<p class="no-files" style="font-size: 14px; color: #888;">La tua cartella non è disponibile.</p>';
     }
     echo '</section>';
     echo '</div>';

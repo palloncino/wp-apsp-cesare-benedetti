@@ -9,7 +9,7 @@ Author: Antonio Guiotto
 // Shortcode function to output the header
 function header_cesare_benedetti_shortcode($atts) {
     // Default page IDs if nav_links attribute is not provided
-    $default_nav_links = array(83, 26, 88, 90, 92);
+    $default_nav_links = array(2, 83, 26, 88, 90, 92);
 
     // Extract shortcode attributes
     $atts = shortcode_atts(array(
@@ -60,10 +60,24 @@ function header_cesare_benedetti_shortcode($atts) {
     // Handle navigation links
     $nav_links = !empty($atts['nav_links']) ? explode(',', $atts['nav_links']) : $default_nav_links;
     $nav_items = '';
+    $current_url = strtolower(trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/'));
+
+    // Check if the current page is the homepage
+    $is_homepage = is_front_page() && $current_url === '';
+
     foreach ($nav_links as $page_id) {
         $page_id = trim($page_id);
         if (is_numeric($page_id) && get_post_status($page_id) == 'publish') {
-            $nav_items .= '<li class="cb-nav-item"><a class="cb-nav-link" href="' . get_permalink($page_id) . '">' . get_the_title($page_id) . '</a></li>';
+            $page_url = strtolower(trim(parse_url(get_permalink($page_id), PHP_URL_PATH), '/'));
+
+            // Determine active class
+            if ($page_id == 2 && $is_homepage) {
+                $active_class = ' active';
+            } else {
+                $active_class = ($current_url === $page_url) ? ' active' : '';
+            }
+
+            $nav_items .= '<li class="cb-nav-item"><a class="cb-nav-link' . $active_class . '" href="' . get_permalink($page_id) . '">' . get_the_title($page_id) . '</a></li>';
         }
     }
 
@@ -85,6 +99,7 @@ function header_cesare_benedetti_shortcode($atts) {
             position: fixed;
             width: 100%;
             top: 0;
+            left: 0;
             z-index: 1000;
         }
 
@@ -156,7 +171,6 @@ function header_cesare_benedetti_shortcode($atts) {
 
         .cb-hero-header {
             width: 100%;
-            max-width: 1200px;
             margin: 0 auto;
             height: 300px;
             display: flex;
@@ -170,6 +184,9 @@ function header_cesare_benedetti_shortcode($atts) {
         .cb-hero-header h1 {
             font-size: 2.5rem;
             margin: 0;
+            color: white;
+            background: ##33333396;
+            padding: 0 .6rem;
         }
 
         #cb-header-height {
