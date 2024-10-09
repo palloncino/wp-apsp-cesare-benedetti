@@ -31,7 +31,7 @@ function homepage_links_grid_render() {
             <div class="homepage-links-grid__text">
                 In questa sezione potrai consultare le regole in materia di trasparenza e di prevenzione della corruzione per le A.P.S.P.;
             </div>
-            <a href="https://apspcesarebenedetti.chebellagiornata.it/anticorruzione-e-trasparenza/" class="homepage-links-grid__button">LEGGI TUTTO &gt;</a>
+            <a href="https://apspcesarebenedetti.chebellagiornata.it/anticorruzione-e-trasparenza/" class="homepage-links-grid__button">LEGGI TUTTO</a>
         </div>
         <div class="homepage-links-grid__item">
             <div class="homepage-links-grid__icon">
@@ -41,7 +41,7 @@ function homepage_links_grid_render() {
             <div class="homepage-links-grid__text">
                 In questa sezione potrai visionare circolari, scaricare documenti ed avere maggiori informazioni sull'Amministrazione dell'APSP;
             </div>
-            <a href="https://apspcesarebenedetti.chebellagiornata.it/amministrazione-trasparente/" class="homepage-links-grid__button">LEGGI TUTTO &gt;</a>
+            <a href="https://apspcesarebenedetti.chebellagiornata.it/amministrazione-trasparente/" class="homepage-links-grid__button">LEGGI TUTTO</a>
         </div>
         <div class="homepage-links-grid__item">
             <div class="homepage-links-grid__icon">
@@ -51,7 +51,7 @@ function homepage_links_grid_render() {
             <div class="homepage-links-grid__text">
                 I volontari portano "aria fresca" all'interno della nostra Casa e ci permettono di sviluppare nuovi progetti che arricchiscono le giornate dei residenti;
             </div>
-            <a href="https://apspcesarebenedetti.chebellagiornata.it/volontari/" class="homepage-links-grid__button">LEGGI TUTTO &gt;</a>
+            <a href="https://apspcesarebenedetti.chebellagiornata.it/volontari/" class="homepage-links-grid__button">LEGGI TUTTO</a>
         </div>
         <div class="homepage-links-grid__item">
             <div class="homepage-links-grid__icon">
@@ -61,7 +61,7 @@ function homepage_links_grid_render() {
             <div class="homepage-links-grid__text">
                 All'interno del sistema telematico sono pubblicati gli atti che devono essere portati a conoscenza dei cittadini, affinché possano prenderne visione;
             </div>
-            <a href="https://apspcesarebenedetti.chebellagiornata.it/pubblicita-legale/" class="homepage-links-grid__button">LEGGI TUTTO &gt;</a>
+            <a href="https://apspcesarebenedetti.chebellagiornata.it/pubblicita-legale/" class="homepage-links-grid__button">LEGGI TUTTO</a>
         </div>
         <div class="homepage-links-grid__item">
             <div class="homepage-links-grid__icon">
@@ -71,7 +71,7 @@ function homepage_links_grid_render() {
             <div class="homepage-links-grid__text">
                 In questa sezione potrai consultare un elenco delle tariffe suddivise per i servizi offerti dell'APSP Cesare Benedetti;
             </div>
-            <a href="https://apspcesarebenedetti.chebellagiornata.it/i-nostri-servizi/tariffe-e-servizi/" class="homepage-links-grid__button">LEGGI TUTTO &gt;</a>
+            <a href="https://apspcesarebenedetti.chebellagiornata.it/i-nostri-servizi/tariffe-e-servizi/" class="homepage-links-grid__button">LEGGI TUTTO</a>
         </div>
         <div class="homepage-links-grid__item">
             <div class="homepage-links-grid__icon">
@@ -81,7 +81,7 @@ function homepage_links_grid_render() {
             <div class="homepage-links-grid__text">
                 La nostra Casa abbraccia una Politica per la Qualità tesa a perseguire uno standard elevato dei servizi forniti e al miglioramento continui degli stessi;
             </div>
-            <a href="https://apspcesarebenedetti.chebellagiornata.it/qualita/" class="homepage-links-grid__button">LEGGI TUTTO &gt;</a>
+            <a href="https://apspcesarebenedetti.chebellagiornata.it/qualita/" class="homepage-links-grid__button">LEGGI TUTTO</a>
         </div>
     </div>
     <?php
