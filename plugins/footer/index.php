@@ -21,7 +21,7 @@ function custom_footer_plugin_render() {
             <div class="footer-cols">
                 <div class="footer-col">
                     <div class="footer-widget">
-                        <h4><a href="https://apspcesarebenedetti.chebellagiornata.it/le-novita/">NOVITÀ</a></h4>
+                        <h4><a href="https://apspcesarebenedetti.chebellagiornata.it/tutte-le-novita/">NOVITÀ</a></h4>
                         <div class="footer-bloglist">
                             <div class="footer-bloglist-items">
                                 <div class="footer-bloglist-item">

@@ -185,7 +185,7 @@ function header_cesare_benedetti_shortcode($atts) {
             font-size: 2.5rem;
             margin: 0;
             color: white;
-            background: ##33333396;
+            background: #33333396;
             padding: 0 .6rem;
         }
 
